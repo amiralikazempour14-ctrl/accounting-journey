@@ -12,9 +12,9 @@ while amal_e_mohasebati < 5:
     if amal_e_mohasebati == 1:
         addad_1 = Decimal(input("adad aval ra vared konid:"))
         addad_2 = Decimal(input("adad dovvom ra vared konid:"))
+        print(f"natije:{addad_1 + addad_2}")
         print("amale jadid ra vared konid:")
         amal_e_mohasebati = int(input())
-        print(f"natije:{addad_1 + addad_2}")
     elif amal_e_mohasebati == 2:
         addad_1 = Decimal(input("adad aval ra vared konid:"))
         addad_2 = Decimal(input("adad dovvom ra vared konid:"))
