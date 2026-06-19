@@ -6,7 +6,7 @@ def add_kala(anbar):
         try:
             price = Decimal(input("price kala ra vared konid:"))
             vazn = Decimal(input("vazn kala ra vared konid:"))
-            ayar = Decimal(int(input("ayar kala ra vared konid:")))
+            ayar = Decimal(input("ayar kala ra vared konid:"))
             anbar.append({"price": price, "vazn": vazn, "ayar": ayar})
             khorooj = int(input("khorooj ra vared konid:1==>yes, 2==>no"))
         except:
@@ -16,7 +16,7 @@ def show_anbar(anbar):
         print(f"price: {kala['price']}, vazn: {kala['vazn']}, ayar: {kala['ayar']}")
 def value_anbar(anbar):
     value = [kala["price"] * kala["vazn"] * kala["ayar"] / 750 for kala in anbar]
-    jam = sum(value).quantize(Decimal("0.01"))
+    jam = sum(value).quantize(Decimal("0.01"))  
     print(f"value anbar: {jam}")
 while True:
     print("1==>add kala")
