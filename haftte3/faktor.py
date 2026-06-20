@@ -40,3 +40,5 @@ print(len(f.aghlam))
 print(f.jam_e_kol(Decimal("15500000")))
 f.nahae_kardan(Decimal("15500000"))
 print(m)
+
+#=======================================
