@@ -1,0 +1,49 @@
+# Professional Accounting Software — Iran Market
+# Primary vertical: Gold Shop (Tala Foroshi)
+# Long-term goal: Full business accounting (like Sepidar/Holoo/Zarrin)
+
+## Developer:
+- Solo developer (Amirali Kazempour)
+- Learning Python while building the product
+- macOS Apple Silicon M5 Max, Python 3.14, Cursor editor
+
+## Architecture (decided):
+- API-First (Django + DRF backend)
+- One backend → desktop, web, mobile, cloud
+- Real double-entry accounting engine
+- PostgreSQL database
+
+## Current Phase:
+- Pure Python OOP (no Django yet)
+- Building domain models: Kala, Moshtari, Faktor, Anbar, Sanad
+- Week 3 of 24-week curriculum
+
+## Domain Rules — Gold Shop (CRITICAL):
+- Gold price formula: vazn * ayar / 750 * gheymat_geram
+- ayar is per-mille (750=18k, 875=21k, 1000=24k) — NEVER karat number
+- gheymat_geram = price per gram of 18k (750) gold (Iran market standard)
+- Products: tala abshode (by vazn), sekke (by tedad), noghre, dollar, shemsh
+- All money/weight: Decimal from STRING only → Decimal("10.5") not Decimal(10.5)
+- NEVER use float for any monetary or weight calculation
+
+## OOP Conventions:
+- Class names: PascalCase (Kala, Faktor, Moshtari, Anbar, Sanad, Hesab)
+- Private attributes: _name prefix (encapsulation)
+- Validation in setter methods
+- super().__init__() always in child classes
+- Composition over inheritance where possible
+
+## Naming (Finglish — stick to this):
+- Attributes: nam, vazn, ayar, gheymat, mande, tedad, ayar, shomare
+- Classes: Kala, TalaAbshode, Sekke, Moshtari, Faktor, Anbar, Sanad
+- Methods: add_kala, set_vazn, set_ayar, arzesh, jam_kol, nahae_kardan
+
+## Code Style:
+- Always use Decimal, never float
+- Validate all inputs (positive numbers, valid ayar range 1-1000)
+- Every class needs __str__
+- Auto-increment IDs via class attributes (shomare_baadi)
+
+## Auto-import Rules:
+- NEVER suggest: multiprocessing, ast, numpy, pandas (not needed)
+- OK to suggest: decimal, datetime, typing, dataclasses
